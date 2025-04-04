@@ -109,7 +109,6 @@
       flex-wrap: wrap;
     }
 
-    /* Effet de neige */
     .snowflake {
       position: fixed;
       top: -10px;
@@ -190,18 +189,49 @@
   <div id="guide" class="content">
     <h2>Guide External Chair</h2>
     <div class="scrollable">
+
       <div class="step">
-        <h3>1. Désactivation dans le BIOS</h3>
-        <p>✅ Désactivez Secure Boot, TPM, SVM</p>
+        <h3>1. Paramètres BIOS</h3>
+        <p>Désactivez <strong>Secure Boot</strong>, <strong>TPM</strong> et <strong>SVM</strong> dans votre BIOS.</p>
       </div>
+
       <div class="step">
-        <h3>2. Désactiver l’antivirus</h3>
+        <h3>2. Désactiver l'antivirus</h3>
+        <p>Désactivez votre antivirus, puis utilisez Defender Control :</p>
         <a href="https://www.sordum.org/9480/defender-control-v2-1/" class="button" target="_blank">Télécharger DControl</a>
       </div>
+
       <div class="step">
         <h3>3. Installer Visual C++ Redistributables</h3>
+        <p>Téléchargez et installez tous les Visual C++ :</p>
         <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" class="button" target="_blank">Télécharger All VC Runtime</a>
+        <p>Ouvrez <code>install.bat</code> en tant qu'administrateur.</p>
       </div>
+
+      <div class="step">
+        <h3>4. Désactiver les pilotes vulnérables</h3>
+        <p>Ouvrez un <strong>CMD administrateur</strong> et tapez :</p>
+        <code>reg add HKLM\SYSTEM\CurrentControlSet\Control\CI\Config /v VulnerableDriverBlocklistEnable /t REG_DWORD /d 0x000000</code>
+      </div>
+
+      <div class="step">
+        <h3>5. Désactiver Hyper-V</h3>
+        <p>Ouvrez un <strong>CMD administrateur</strong> et tapez :</p>
+        <code>bcdedit /set hypervisorlaunchtype off</code>
+      </div>
+
+      <div class="step">
+        <h3>6. Désactiver les overlays</h3>
+        <p>Désactivez uniquement l’<strong>overlay Discord</strong> dans les paramètres de Discord.</p>
+      </div>
+
+      <div class="step">
+        <h3>7. Lancer le loader</h3>
+        <p>Créez un dossier sur le bureau et placez-y le loader.</p>
+        <p>Lancez-le en administrateur, entrez la clé, cliquez sur <strong>Spoof Y</strong>, puis lancez le jeu.</p>
+        <p>Si erreur <code>restart pc</code> : redémarrez votre PC avec le loader dans un dossier sur le bureau.</p>
+      </div>
+
     </div>
   </div>
 
