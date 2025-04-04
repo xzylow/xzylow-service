@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xzylow loader</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    body {
+      background-color: #000;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .header {
+      font-size: 2.8em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 10px white;
+      margin-top: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .nav-item {
+      background-color: #111;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px white;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-item:hover {
+      background-color: #222;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px white;
+    }
+
+    .content {
+      display: none;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 800px;
+      border: 2px solid white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px white;
+      background-color: #111;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .scrollable {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .step {
+      border: 2px solid white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background-color: #222;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      background-color: #111;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px white;
+      border: 2px solid white;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #222;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px white;
+    }
+
+    .loader-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      opacity: 0.8;
+      font-size: 12px;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.content').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    window.onload = function() {
+      showSection('welcome');
+      createSnow();
+    };
+
+    function createSnow() {
+      const snowContainer = document.body;
+      for (let i = 0; i < 100; i++) {
+        let snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '❄';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+        snowflake.style.animationDelay = Math.random() * 5 + 's';
+        snowContainer.appendChild(snowflake);
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="header">xzylow loader</div>
+
+  <div class="navbar">
+    <span class="nav-item" onclick="showSection('welcome')">Bienvenue</span>
+    <span class="nav-item" onclick="showSection('shop')">Boutique 24h/7j</span>
+    <span class="nav-item" onclick="showSection('loader')">Loader</span>
+    <span class="nav-item" onclick="showSection('guide')">Guide External Chair</span>
+    <span class="nav-item" onclick="showSection('valorant')">Valorant Guide</span>
+  </div>
+
+  <div id="welcome" class="content active">
+    <h2>Bienvenue</h2>
+    <p>✅ Le spoof et le loader External Chair</p>
+    <p>📘 Un guide complet pour l'aide !</p>
+    <p>🛒 Accès direct à notre boutique 24h/7j</p>
+  </div>
+
+  <div id="shop" class="content">
+    <h2>Boutique 24h/7j</h2>
+    <p>Si xzylow n’est pas présent dans les tickets, le site reste à votre disposition !</p>
+    <a href="https://xzylowmarket.mysellauth.com/" class="button" target="_blank">Accéder à la boutique</a>
+  </div>
+
+  <div id="loader" class="content">
+    <h2>Loader</h2>
+    <div class="loader-buttons">
+      <a href="https://cdn.discordapp.com/attachments/1348049795209625600/1357740553017626634/spoofer_one_click.exe?ex=67f14ded&is=67effc6d&hm=9e1ec310e4d48e3a6267fdf9328f5993e6b5c1771b9bc2d5870c1a8c2ef43600&" class="button" download>Télécharger Spoofer One Click</a>
+      <a href="https://cdn.discordapp.com/attachments/1348049795209625600/1357739262736470026/loader.exe?ex=67f14cb9&is=67effb39&hm=fa7ddd6d01a0b6867c03402f8ae5ea2b6ce42832e2a338ba993bffec703006ff&" class="button" download>Télécharger External Chair Bo6</a>
+    </div>
+  </div>
+
+  <div id="guide" class="content">
+    <h2>Guide External Chair</h2>
+    <div class="scrollable">
+
+      <div class="step">
+        <h3>1. Paramètres BIOS</h3>
+        <p>Désactivez <strong>Secure Boot</strong>, <strong>TPM</strong> et <strong>SVM</strong> dans votre BIOS.</p>
+      </div>
+
+      <div class="step">
+        <h3>2. Désactiver l'antivirus</h3>
+        <p>Désactivez votre antivirus, puis utilisez Defender Control :</p>
+        <a href="https://www.sordum.org/9480/defender-control-v2-1/" class="button" target="_blank">Télécharger DControl</a>
+      </div>
+
+      <div class="step">
+        <h3>3. Installer Visual C++ Redistributables</h3>
+        <p>Téléchargez et installez tous les Visual C++ :</p>
+        <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" class="button" target="_blank">Télécharger All VC Runtime</a>
+        <p>Ouvrez <code>install.bat</code> en tant qu'administrateur.</p>
+      </div>
+
+      <div class="step">
+        <h3>4. Désactiver les pilotes vulnérables</h3>
+        <p>Ouvrez un <strong>CMD administrateur</strong> et tapez :</p>
+        <code>reg add HKLM\SYSTEM\CurrentControlSet\Control\CI\Config /v VulnerableDriverBlocklistEnable /t REG_DWORD /d 0x000000</code>
+      </div>
+
+      <div class="step">
+        <h3>5. Désactiver Hyper-V</h3>
+        <p>Ouvrez un <strong>CMD administrateur</strong> et tapez :</p>
+        <code>bcdedit /set hypervisorlaunchtype off</code>
+      </div>
+
+      <div class="step">
+        <h3>6. Désactiver les overlays</h3>
+        <p>Désactivez uniquement l’<strong>overlay Discord</strong> dans les paramètres de Discord.</p>
+      </div>
+
+      <div class="step">
+        <h3>7. Lancer le loader</h3>
+        <p>Créez un dossier sur le bureau et placez-y le loader.</p>
+        <p>Lancez-le en administrateur, entrez la clé, cliquez sur <strong>Spoof Y</strong>, puis lancez le jeu.</p>
+        <p>Si erreur <code>restart pc</code> : redémarrez votre PC avec le loader dans un dossier sur le bureau.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="valorant" class="content">
+    <h2>Valorant Guide</h2>
+    <a href="https://onyx-software.gitbook.io/help" class="button" target="_blank">Accéder au guide Valorant</a>
+  </div>
+</body>
+</html>
